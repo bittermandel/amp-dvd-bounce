@@ -1,34 +1,34 @@
 # amp-dvd-bounce
 
-Bouncing DVD logo screensaver for [Amp](https://ampcode.com) — renders while the agent is thinking.
+A small [Amp](https://ampcode.com) plugin that shows a bouncing DVD logo while the agent is running, because nothing says "deep work" like watching it miss the corner for five minutes.
 
 ## How it works
 
-Uses the [Kitty graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/) to render the official DVD VIDEO logo as a transparent PNG overlay on top of your terminal. The image floats over your content without destroying it — no ANSI hacks, no screen corruption.
+The plugin uses the [Kitty graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/) to draw `dvd-logo.png` as an overlay in the terminal.
 
-- `agent.start` → spawns a background process that bounces the logo
-- `agent.end` → kills the process and removes the image overlay
+- On `agent.start`, it launches `dvd-bounce-render.sh` in the background.
+- On `agent.end`, it stops that process and clears the overlay.
 
 ## Supported terminals
 
-Any terminal with Kitty graphics protocol support:
+Works in terminals with Kitty graphics support, including:
 
 - [Ghostty](https://ghostty.org)
 - [Kitty](https://sw.kovidgoyal.net/kitty/)
 - [WezTerm](https://wezfurlong.org/wezterm/)
 - [Konsole](https://konsole.kde.org/) (partial)
 
-Will not work in: iTerm2, Terminal.app, Alacritty, tmux.
+Does not work in iTerm2, Terminal.app, Alacritty, or tmux.
 
 ## Install
 
-Clone into your Amp plugins directory:
+Clone the plugin into your Amp plugins directory:
 
 ```bash
 git clone https://github.com/bittermandel/amp-dvd-bounce ~/.config/amp/plugins/dvd-bounce
 ```
 
-Run Amp with plugins enabled:
+Start Amp with plugins enabled:
 
 ```bash
 PLUGINS=all amp
