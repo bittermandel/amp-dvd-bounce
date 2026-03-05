@@ -28,6 +28,19 @@ Clone the plugin into your Amp plugins directory:
 git clone https://github.com/bittermandel/amp-dvd-bounce ~/.config/amp/plugins/dvd-bounce
 ```
 
+Create the global top-level plugin entry file:
+
+```bash
+cat > ~/.config/amp/plugins/dvd-bounce.ts <<'TS'
+// @i-know-the-amp-plugin-api-is-wip-and-very-experimental-right-now
+import plugin from "./dvd-bounce/dvd-bounce";
+
+export default plugin;
+TS
+```
+
+This writes `~/.config/amp/plugins/dvd-bounce.ts`, which loads this repo.
+
 Start Amp with plugins enabled:
 
 ```bash
