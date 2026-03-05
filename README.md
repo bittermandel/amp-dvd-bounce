@@ -1,3 +1,7 @@
+https://github.com/user-attachments/assets/be2ebdaa-5aa6-4671-9468-941492a10f34
+
+
+
 # amp-dvd-bounce
 
 A small [Amp](https://ampcode.com) plugin that shows a bouncing DVD logo while the agent is running, because nothing says "deep work" like watching it miss the corner for five minutes.
